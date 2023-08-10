@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+        <title>Document</title>
+
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="content">
+                <div class="aside">
+                    <h6>Pay With:</h6>
+
+                    <div class="option">
+                        <div class="pay" id="pay-with-card">
+                            <i class="ph ph-credit-card"></i>
+                            <p>Card</p>
+                        </div>
+
+                        <div class="pay" id="pay-with-transfer">
+                            <i class="ph ph-bank"></i>
+                            <p>Transfer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- #CARD PAYMENT -->
+                <div class="main" id="card">
+                    <div class="content-header">
+                        <div>
+                            <img src="img/logo.png" alt width="50" />
+                            <h6>NGN 5,026.00</h6>
+                        </div>
+                        <div>
+
+                            <h5>NURSING ADMISSION</h5>
+                            <span>Our lady of Lourdes complex, Ihiala</span>
+                        </div>
+                    </div>
+
+
+                    <div class="details">
+                        <h6>Enter card details</h6>
+
+                        <form action="">
+                            <div class=" card-number" style="margin-bottom: 14px;">
+                                <label class>Card Number</label>
+                                <input type="text" pattern="[0-9]*" class="card-number-input" class
+                                    placeholder="XXXX XXXX XXXX XXXX" oninput="validateCardNumber(this)" />
+                                <!-- <i><img src="img/im-45496-removebg-preview.png" alt width="25" height="20" /></i> -->
+                            </div>
+
+                            <div class="card-name" style="margin-bottom: 14px;">
+                                <label class>Cardholder's Name</label>
+                                <input type="text" class placeholder="John Cresten" />
+                            </div>
+
+                            <div class="sub-details " style="margin-bottom: 14px;">
+                                <div style="
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                justify-content: center;
+                                align-items: center;
+                                column-gap: 20px;
+                                text-align: center;
+                            ">
+                                    <!-- <label for="form-label">Expiry Date</label> -->
+                                    <div class="exp-month">
+                                        <label for="form-label">Expiry Date</label>
+                                        <input type="text" class placeholder="MM" maxlength="2"
+                                            oninput="validateMonth(this)" />
+                                    </div>
+                                    <div class="exp-year">
+                                        <input type="text" class placeholder="YY" style="margin-top: 18px;"
+                                            maxlength="4" oninput="validateYear(this)" />
+                                    </div>
+                                </div>
+
+                                <div class="cvv">
+                                    <label for="form-label">CVV</label>
+                                    <input type="text" class placeholder="XXX" maxlength="3"
+                                        oninput="validateCVV(this)" />
+                                </div>
+                            </div>
+
+                            <div class="check">
+                                <input type="checkbox" id="saveCardCheckbox" onchange="updateButtonContent(this)">
+                                <span>Save my card</span>
+                            </div>
+
+                            <div>
+                                <button type="submit" id="payButton">
+                                    <span>Pay NGN 5,026.00</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- #FOR TRANSFER -->
+                <div class="main" id="transfer">
+                    <div class="content-header">
+                        <div>
+                            <img src="img/logo.png" alt width="50" />
+                            <h6>NGN 5,026.00</h6>
+                        </div>
+                        <div>
+                            <h5>NURSING ADMISSION</h5>
+                            <span>Our lady of Lourdes complex, Ihiala</span>
+                        </div>
+                    </div>
+
+                    <div class="details">
+                        <h6 style="margin-top: 16px; margin-bottom: 15px; font-size: 14px;
+                    font-family: 'Inconsolata', monospace;
+                    font-weight: 500; color: #ff0000;">Transfer the exact amount including decimals</h6>
+                    </div>
+
+                    <div class="transfer-details">
+                        <div class="tsub-details">
+                            <span>BANK NAME</span>
+                            <p>Wema Bank</p>
+                        </div>
+
+                        <div class="tsub-details">
+                            <span>ACCOUNT NUMBER</span>
+                            <p>7278661104</p>
+                        </div>
+
+                        <div class="tsub-details">
+                            <span>AMOUNT</span>
+                            <p>NGN 5,026</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p style="margin-top: 16px; margin-bottom: 5px; font-size: 14px; color: #ff0000">
+                            Account number can only be used once
+                        </p>
+                    </div>
+
+                    <div>
+                        <button type="submit"> <span> I've completed the transfer</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <li class>Copyright &#169; 2023 Designed by Cyril</li>
+            </div>
+        </div>
+
+
+
+
+
+        <script>
+            const payWithCard = document.getElementById("pay-with-card");
+            const payWithTransfer = document.getElementById("pay-with-transfer");
+            const cardContent = document.getElementById("card");
+            const transferContent = document.getElementById("transfer");
+
+            payWithCard.style.color = "#0254E4";
+
+            payWithCard.addEventListener("click", () => {
+                cardContent.style.display = "block";
+                transferContent.style.display = "none";
+                payWithCard.style.color = "#0254E4"; // Reset text color
+                payWithTransfer.style.color = ""; // Reset text color
+            });
+
+            payWithTransfer.addEventListener("click", () => {
+                cardContent.style.display = "none";
+                transferContent.style.display = "block";
+                payWithCard.style.color = ""; // Reset text color
+                payWithTransfer.style.color = "#0254E4"; // Set text color to redSS
+            });
+
+
+
+            // FOR CARD NUMBER INPUT 
+            const cardNumberInput = document.querySelector('.card-number-input');
+
+            cardNumberInput.addEventListener('input', function (event) {
+                const value = event.target.value;
+                const formattedValue = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+                event.target.value = formattedValue;
+            });
+
+
+            function validateCardNumber(input) {
+                input.value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+            }
+
+            function validateMonth(input) {
+                input.value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+            }
+
+            function validateYear(input) {
+                input.value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+            }
+
+            function validateCVV(input) {
+                input.value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+            }
+
+        </script>
+
+
+
+
+        <script>
+            function updateButtonContent(checkbox) {
+                var payButton = document.getElementById("payButton");
+                var spanElement = payButton.getElementsByTagName("span")[0];
+
+                if (checkbox.checked) {
+                    spanElement.innerText = "Save and Pay 5,026.00";
+                } else {
+                    spanElement.innerText = "Pay NGN 5,026.00";
+                }
+            }
+        </script>
+        <script src="app.js"></script>
+    </body>
+
+</html>

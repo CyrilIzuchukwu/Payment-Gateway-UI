@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&family=Inconsolata:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&display=swap');
+
+* {
+   padding: 0;
+   margin: 0;
+}
+
+.wrapper {
+   background-image: url("img/payment\ page\ 03.png");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;/* Set a minimum height to cover the entire viewport */
+}
+.wrapper::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%);
+   /* z-index: -1; */
+
+}
+
+.content {
+   text-align: center;
+   width: 520px;
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   z-index: 4;
+}
+
+.content {
+   display: grid;
+   grid-template-columns: 1fr 3fr;
+   
+}
+.content .aside {
+   background-color: #ddd;
+   padding-top: 20px;
+   padding-left: 20px;
+   border-top-left-radius: 5px;
+   border-bottom-left-radius: 5px;
+}
+
+.content .aside h6 {
+   font-size: 16px;
+   text-align: start;
+   font-family: 'Inconsolata', monospace;
+   font-weight: 600;
+   margin-bottom: 17px;
+}
+
+
+.content .aside .pay {
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   cursor: pointer;
+   margin-top: 10px;
+   margin-bottom: 13px;
+}
+
+
+.content .aside .pay p {
+   margin-top: 0;
+   margin-bottom: 0;
+   font-family: 'Inconsolata', monospace;
+   font-weight: 500;
+   font-size: 14px;
+}
+
+.content .aside .pay i {
+   margin-right: 15px;
+   text-align: center;
+}
+
+
+.content .main {
+   padding: 25px 25px;
+}
+
+.content .main .content-header {
+   display: flex;
+   justify-content: space-between;
+   border-bottom: 1px solid #bbb;
+   padding-bottom: 8px;
+}
+
+.content .main .content-header h6 {
+   font-size: 13px;
+   text-align: end;
+   font-family: 'Inconsolata', monospace;
+   font-weight: 600;
+}
+
+.content .main .content-header h5 {
+   font-size: 13px;
+   text-align: end;
+   font-family: 'Inconsolata', monospace;
+   font-weight: 600;
+   margin-top: 20px;
+}
+
+.content .main .content-header span {
+   margin-bottom: 0;
+   text-align: end;
+   font-size: 12px;
+   color: #555;
+   font-family: 'Andika', sans-serif;
+}
+
+
+.content .main .details h6 {
+   margin-top: 13px;
+   margin-bottom: 8px;
+   font-family: 'Inconsolata', monospace;
+   font-size: 17px;
+   font-weight: 500;
+}
+
+.content .main .details .card-number {
+   position: relative;
+}
+
+.content .main .details .card-number i {
+   position: absolute;
+   right: 10px;
+   top: 27px;
+}
+
+.content .main .details .sub-details {
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   column-gap: 40px;
+   justify-content: center;
+   align-items: center;
+}
+
+
+.content .main .details form label {
+   font-size: 13px;
+   display: block;
+   text-align: start !important;
+   color: #000;
+   font-weight: 500;
+   margin-bottom: 3px;
+   font-family: 'Inconsolata', monospace;
+   color: rgb(25, 25, 25);
+}
+
+.content .main .details form input {
+   border: 1.2px solid #C2C2C2;
+   outline: none !important;
+   height: 34px;
+   width: 100%;
+   padding-left: 9px;
+   border-radius: 4px;
+   font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12px;
+}
+
+.content .main .details form .check{
+   display: flex;
+   justify-content: start;
+   align-items: center;
+}
+
+.content .main .details form .check span{
+   margin-left: 4px;
+   font-size: 12px;
+   font-weight: 700;
+}
+.content .main .details form input[type="checkbox"]{
+   height: 12px;
+   width: 12px;
+   border: 1px solid #c2c2c2;
+   padding-left: 0px;
+   border-radius: 1px;
+   font-size: 3px;
+   cursor: pointer;
+}
+.content .main .details form button {
+   width: 100%;
+   border-radius: 4px;
+   background-color: #1D9B4F;
+   color: #fff;
+   padding: 10px 10px;
+   border: none;
+   outline: none;
+   transition: 0.4s;
+   margin-top: 10px;
+   font-family: 'Inconsolata', monospace;
+   font-weight: 500;
+   cursor: pointer;
+   position: relative;
+   z-index: 2;
+   /* font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+}
+
+.content .main .details form button::before{
+   position: absolute;
+   content: "";
+   bottom: 0;
+   left: 0;
+   height: 100%;
+   background-color: #F1592A;
+   width: 0px;
+   transition: 1.5s;
+   border-radius: 4px;
+}
+
+.content .main .details form button span {
+   position: relative;
+   z-index: 3;
+}
+
+.content .main .details form button:hover::before{
+   width: 100%;
+}
+
+.content .main .details form button::after{
+   position: absolute;
+   content: "";
+   bottom: 0;
+   right: 0;
+   height: 100%;
+   background-color: #F1592A;
+   width: 0px;
+   transition: 1.5s;
+   border-radius: 4px;
+}
+
+
+.content .main .details form button:hover::after{
+   width: 100%;
+}
+
+/* .content .main .details form button:hover {
+   transition: 0.4s;
+   background-color: #F1592A;
+} */
+
+.content .main .details .copyright li {
+   list-style-type: none;
+   font-size: 13px;
+   font-weight: 500;
+   margin-top: 13px;
+   font-family: 'Andika', sans-serif;
+   color: #444;
+
+}
+
+
+
+
+/* STYLING FOR TRANSFER METHOD */
+
+.content #transfer {
+   display: none;
+}
+
+
+/* .content #transfer .details h6 {
+   font-size: 300rem;
+   font-weight: 600;
+   font-family: 'Inconsolata', monospace;
+} */
+
+.content #transfer .transfer-details {
+   background-color: #eee;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.content #transfer .transfer-details .tsub-details {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+}
+
+.content #transfer .transfer-details .tsub-details span {
+   font-size: 10px;
+   font-weight: 900;
+   color: #000;
+   text-align: start;
+   margin-bottom: 2px;
+}
+
+.content #transfer .transfer-details .tsub-details p {
+   font-size: 14px;
+   font-weight: 500;
+   color: #444;
+   text-align: start;
+}
+
+.content #transfer button {
+   width: 100%;
+   border-radius: 4px;
+   background-color: #1D9B4F;
+   color: #fff;
+   padding: 10px 10px;
+   border: none;
+   outline: none;
+   transition: 0.4s;
+   margin-top: 10px;
+   font-family: 'Inconsolata', monospace;
+   font-weight: 500;
+   cursor: pointer;
+   position: relative;
+   z-index: 2;
+}
+
+.content #transfer button::before{
+   position: absolute;
+   content: "";
+   bottom: 0;
+   left: 0;
+   height: 100%;
+   background-color: #F1592A;
+   width: 0px;
+   transition: 1.5s;
+   border-radius: 4px;
+}
+
+.content #transfer button span {
+   position: relative;
+   z-index: 3;
+}
+
+.content #transfer button:hover::before{
+   width: 100%;
+}
+
+.content #transfer button::after{
+   position: absolute;
+   content: "";
+   bottom: 0;
+   right: 0;
+   height: 100%;
+   background-color: #F1592A;
+   width: 0px;
+   transition: 1.5s;
+   border-radius: 4px;
+}
+
+
+.content #transfer button:hover::after{
+   width: 100%;
+}
+
+
+
+.wrapper .copyright {
+   content: "";
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   bottom: 110px;
+}
+
+.wrapper .copyright li {
+   list-style-type: none;
+   font-size: 13px;
+   font-weight: 500;
+   margin-top: 13px;
+   font-family: 'Andika', sans-serif;
+   color: #ddd;
+}
+
+
+/* MEDIA QUERY  */
+@media only screen and (max-width: 767px) {
+   .content {
+      display: grid;
+      grid-template-columns: 1fr;
+   }
+
+   .content .aside .option {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+   }
+
+   .content .aside .pay {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      cursor: pointer;
+      margin-top: 10px;
+      margin-bottom: 15px;
+   }
+
+
+   .wrapper .copyright {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 50px;
+      width: 100%;
+      text-align: center;
+   }
+
+}
